@@ -54,6 +54,12 @@ p {
     color: black;
     text-align: justify;
 }
+p.note {
+    background-color: lightgrey;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
 p.subtitle {
     text-align: center;
 }

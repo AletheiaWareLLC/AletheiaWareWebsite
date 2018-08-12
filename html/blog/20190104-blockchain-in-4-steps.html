@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <link rel="stylesheet" href="../styles.css">
+        <title>Blockchain in 4 Steps - Aletheia Ware</title>
+    </head>
+
+    <body>
+        <div class="content">
+            <div class="header">
+                <a href="/">
+                    <img src="../logo.svg" />
+                </a>
+            </div>
+            <h1>Blockchain in 4 Steps</h1>
+
+            <p class="subtitle">This post intends to describe a blockchain in 4 steps.</p>
+
+            <p>Blockchains enable computers to reach consensus across an untrusted network.</p>
+
+            <p>Much of the blockchain industry is focused on cryptocurrency, but this post will look more generally at the underlying technology.</p>
+
+            <h2>Step 1: Cryptography</h2>
+
+            <p>Two of the biggest concerns of modern times are privacy and security. Physical material forms the basis of this in real life; locks, keys, doors and walls. But consider your digital life, what protects your photos from the wrong eyes and ensures messages are only read by the intended recipient(s)?</p>
+
+            <p>Cryptography is a field of study sitting at the intersection of several branches of mathematics and science, and would take more than a single post to explain. In short, there are three important cryptographic concepts for blockchains;
+                <ol>
+                    <li>
+                        <p>Cryptographic Hash Function - a one-way mathematical function which maps data of arbitrary size to a value within a finite range, referred to as the data's hash. The process of generating a hash for a piece of data is unsurprisingly called hashing.</p>
+
+                        <p>There are two main properties of a hash function;
+                            <ol>
+                                <li>
+                                    <p>Given the same data, the function will always return the same hash. No matter how may times the hash function is called with the same piece of data, the result will always be the same.</p>
+                                </li>
+                                <li>
+                                    <p>Two pieces of data, no matter how similar will get different hashes.</p>
+                                </li>
+                            </ol>
+                        </p>
+
+                        <img src="20190104-hash-function.png" />
+
+                        <p class="note">Note: it is possible for two different pieces of data to get hashed to the same value, which is called a hash collision, however in practice it is improbable.</p>
+                    </li>
+                    <li>
+                        <p>Encryption & Decryption - Transform data into an unreadable format (encryption) and back (decryption) and can be divided into two methods.
+                            <ol>
+                                <li>
+                                    <p>Symmetric - a single secret key shared between two or more parties.</p>
+
+                                    <img src="20190104-symmetric-encryption.png" />
+                                </li>
+                                <li>
+                                    <p>Asymmetric - each party has a pair of keys, one is public for all to know, the other is private and kept to the owner. The two keys complement each other such that;
+                                        <ul>
+                                            <li>Data encrypted with a public key can only be decrypted by the corresponding private key.</li>
+                                            <li>Data signed with a private key can be verified with the corresponding public key (see Cryptographic Signature below).</li>
+                                        </ul>
+                                    </p>
+
+                                    <img src="20190104-asymmetric-encryption.png" />
+                                </li>
+                            </ol>
+                        </p>
+                    </li>
+                    <li>
+                        <p>Cryptographic Signature - Used to verify the authenticity of data. The hash of the payload is signed by the sender's private key and sent along with the payload to the reciever, who can then verify the signature matches the payload's hash using the sender's public key.</p>
+
+                        <img src="20190104-signature.png" />
+                    </li>
+                </ol>
+            </p>
+
+            <p class="note">Note: Cyptography is not impenetrable and much like a lock, or a safebox, can be cracked given the right tools and enough time. However the time taken to crack RSA 4096bit public key encryption given current computer hardware is estimated to be in the order of millenia.</p>
+
+            <h2>Step 2: Block</h2>
+            <p>A block is a data structure containing;
+                <ol>
+                    <li>Timestamp - when the block was created.</li>
+                    <li>Previous - the hash of the previous block (see Step 3: Chain).</li>
+                    <li>Payload - the actual payload of the block, a set of messages, records, signals, or transactions.</li>
+                    <li>Signature - a cryptographic signature created with the private key.</li>
+                </ol>
+            </p>
+
+            <p>When a block is given to a hash function the result, called the block's hash, can be used to uniquely identify the block.</p>
+
+            <img src="20190104-block.png" />
+
+            <p>Additionally, a block could also contain;
+                <ol>
+                    <li>Name - the name of the block chain</li>
+                    <li>Length - the number of blocks in the chain</li>
+                    <li>Metadata - data describing the payload and/or its format</li>
+                </ol>
+            </p>
+
+            <p>A blockchain implementing the Proof-of-Work Consensus Algorithm will also contain a Nonce (see Step 4: Consensus).</p>
+
+            <h2>Step 3: Chain</h2>
+            <p>Each block, except the first, contains the hash of the block created before it, linking the blocks together in a chain. If any block is modified, its block hash will change thus breaking the chain. This gives a blockchain the properties of idelibility (data cannot be deleted) and immutability (data cannot be modified).</p>
+
+            <img src="20190104-chain.png" />
+
+            <h2>Step 4: Consensus</h2>
+            <p>A consensus algorithm is a rule used by the network to determine whether a block is valid, it is also meant to ensure each party has an equal chance of contributing a block to the chain. When a new block is created and broadcast to the network, each computer must verify the block and agree that it is new head of the chain.</p>
+
+            <p>There are multiple consensus algorithms, but the most common is Proof-of-Work - the network agree that the block's hash must conform to some rule; in Bitcoin the first N digits of the hash must be 0 and N is adjusted so the difficulty grows with the computational power of the network. The rule could just as easily be that the hash must end with ...76543210 - it doesn't matter as long as the network agree on the rule.</p>
+
+            <p>For a block to be valid a miner must iterate through the set of integers to find one, called a Nonce, such that when the Nonce is added to the block, the block's hash conforms to the rule, often refered to as solving the puzzle.</p>
+
+            <p>The analogy comes from the idea that a miner puts in a lot of work, digging through earth to find a rock of value. A blockchain miner puts in a lot of work, trying various nonces to find a hash that solves the puzzle.</p>
+
+            <p>Another consensus algorithm is Proof-of-Stake - the network selects a computer to create the next block in the chain based on the stake that computer has in the network.</p>
+
+            <p>As with all rules there are those who look for ways to bend them. In Proof-of-Work systems, people invest in computational power to increase their likelyhood of mining the next block - basically those with the most computational power typically win (<a href="https://www.blockchain.com/pools">Example</a>). In Proof-of-Stake systems, people invest in their stake to increase their likelyhood of getting selected - basically those with the most wealth typically win. There are many other consensus algorithms but each of them either tries to solve the problem with another resource such as memory, or storage (which can also be gamified), or with centralization (which is the antigoal of a distributed system like blockchain).</p>
+
+            <p class="note">Note: Though often conflated, blockchains and distributed ledgers are in fact distinct, but complementary, terms. A blockchain holds transactions between parties, a computer will iterate through the blockchain and tally up the amounts credited and debited to each party, resulting in a ledger holding the balance of each party. As each computer in the network have reached consensus on the transactions, each of their ledgers will hold the same results, and thus the information is considered distributed across the network.</p>
+
+            <div class="footer">
+                <p>© 2019 Aletheia Ware LLC.  All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+</html>
