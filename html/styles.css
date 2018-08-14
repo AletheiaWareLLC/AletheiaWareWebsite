@@ -1,14 +1,22 @@
 body {
     background-color: white;
-}
-h1 {
-    color: blue;
+    font-family: Helvetica, sans-serif;
 }
 p {
     color: black;
 }
+.header {
+    border-bottom: 1px solid black;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.header img {
+    display: block;
+    margin: auto;
+}
 .content {
-    max-width: 500px;
+    max-width: 960px;
     margin: auto;
     padding: 10px;
+    text-align: center;
 }
