@@ -97,3 +97,17 @@ p.subtitle {
 .nav a:hover {
     color: darkgrey;
 }
+.tier-table {
+    border-spacing: 20px 10px;
+    empty-cells: hide;
+    margin: auto;
+}
+.tier-table td {
+    padding: 0px 10px;
+}
+.tier-table th {
+    border-bottom: 1px solid black;
+}
+.tier-table tbody {
+    text-align: center;
+}
