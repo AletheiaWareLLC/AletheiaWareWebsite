@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <link rel="stylesheet" href="../styles.css">
+        <title>Perspective Documentation - Aletheia Ware</title>
+    </head>
+
+    <body>
+        <div class="content">
+            <div class="header">
+                <a href="/">
+                    <img src="../logo.svg" />
+                </a>
+            </div>
+
+            <h1>Perspective Documentation</h1>
+
+            <p>Concepts;
+                <ul>
+                    <li>Sphere - this is you, how did you get stuck in this maze?</li>
+                    <li>Goal - the way out, but how do you get there?</li>
+                    <li>Block - looks solid, could it break your fall?</li>
+                    <li>Portal - in one, and out the other?</li>
+                </ul>
+            </p>
+
+            <p>Controls;
+                <ul>
+                    <li>Tap - Activate Gravity</li>
+                    <li>Swipe - Rotate Maze</li>
+                </ul>
+            </p>
+
+            <p>Editor;
+                <ul>
+                    <li>Commands;
+                        <ul>
+                            <li>create-world - creates a new world with the given name, size and colour scheme</li>
+                            <li>show-world - shows the given world</li>
+                            <li>add-shader - adds a shader with the given name to the world</li>
+                            <li>add-puzzle - adds a puzzle to the world</li>
+                            <li>generate-puzzle - generates a new puzzle with the given attributes</li>
+                            <li>score-puzzle - scores the puzzle under the given path</li>
+                        </ul>
+                    </li>
+                    <li>Code Structure;
+                        <ul>
+                            <li>generator.go - Generates random puzzles with the given attributes</li>
+                            <li>scorer.go - Calculated the score and penalty of a given puzzle</li>
+                            <li>command/editor.go - Handles command line parsing</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+
+            <p>Source Code;
+                <ul>
+                    <li><a href="https://github.com/AletheiaWareLLC/Perspective">Protobuf</a></li>
+                    <li><a href="https://github.com/AletheiaWareLLC/perspectivego">Go</a></li>
+                    <li><a href="https://github.com/AletheiaWareLLC/perspectiveeditorgo">Editor</a></li>
+                    <li><a href="https://github.com/AletheiaWareLLC/PerspectiveJava">Java</a></li>
+                    <li><a href="https://github.com/AletheiaWareLLC/PerspectiveAndroid">Android</a></li>
+                </ul>
+            </p>
+
+            <div class="footer">
+                <p>© 2019 Aletheia Ware LLC.  All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+</html>

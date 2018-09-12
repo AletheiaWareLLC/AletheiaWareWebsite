@@ -68,6 +68,9 @@ p.note {
 p.subtitle {
     text-align: center;
 }
+ul {
+    list-style-image: url('logo-small.svg');
+}
 .header {
     border-bottom: 1px solid black;
     overflow: hidden;
@@ -76,6 +79,17 @@ p.subtitle {
 .header img {
     display: block;
     margin: auto;
+}
+.content-panel {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.content-panel h2 {
+    text-align: center;
+}
+.content-panel p {
+    text-align: center;
 }
 .footer {
     border-top: 1px solid black;

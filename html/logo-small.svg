@@ -1,0 +1,7 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="12" height="12">
+    <g fill="none" stroke="black" stroke-linecap="butt" stroke-linejoin="bevel" stroke-width="0.5">
+        <circle cx="6" cy="6" r="5" />
+        <polyline points="1,6 3,4 5,6 7,8 8,7 9,8 11,6" />
+    </g>
+</svg>
