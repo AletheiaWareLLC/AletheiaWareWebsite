@@ -5,7 +5,7 @@
 
     <head>
         <link rel="stylesheet" href="styles.css">
-        <title>Space - Aletheia Ware LLC</title>
+        <title>Space - Aletheia Ware</title>
     </head>
 
     <body>
@@ -15,58 +15,44 @@
                     <img src="logo.svg" />
                 </a>
             </div>
+
             <h1>Need Space?</h1>
-            <p class="subtitle">Space is an end-to-end encrypted, blockchain-based cloud storage platform.</p>
-            <p>How much data do you have stored across multiple devices?</p>
-            <p>TODO introduction</p>
+            <p class="subtitle">Space is an end-to-end encrypted, blockchain-based storage platform.</p>
+
+            <p>In this digital age, more so than ever; knowledge is power, information is foresight, and data is money. You may not recognize the true value of your personal data until someone else has sold it - that free service you signed up for wasn't free at all. A company needs to earn to stay in business, would you rather pay with currency or personal data?</p>
+
+            <p>When deciding how to store your dog pictures, cat videos, music playlists, bank statements, government documents, and other aspects of your digital life, consider the following three aspects</p>
             <ul>
-                <li><strong>Confidentiality</strong> - Aletheia Ware does not store your password or private key and therefore, unlike other cloud storage providers, cannot read your data. Instead, Space encrypts data on your device before upload using your public key. Upon download, Space decrypts your data on your device using your private key.</li>
-                <li><strong>Integrity</strong> - a cryptographic signature ensures your data is not modified while uploading to Aletheia Ware's servers, and once mined into a blockchain a cryptographic hash along with your signature ensures your data is indelible and immutable.</li>
+                <li><strong>Availability</strong> - is your data available when and where you need it?</li>
+                <li><strong>Confidentiality</strong> - is your data only accessible to you?</li>
+                <li><strong>Integrity</strong> - can your data be modified without your authorization or knowledge?</li>
             </ul>
+
+            <p>For example; external storage drives are cheaper than ever and can store huge amounts of data. However, you need to carry them around with you and if they get damaged, lost, or stolen your data is gone. Alternatively, cloud storage providers allow you to access your data from anywhere as long as you have an internet connection. But the provider is able to read and modify your data without your knowledge.</p>
+
+            <p>Isn't there a simpler way? Yes - private & secure data storage using blockchains!</p>
+
+            <p>By encrypting your data and mining it into a blockchain you ensure: availability - your encrypted data is stored on a network spanning the globe and can be cached locally for offline access; confidentiality - your data can only be decrypted with your private key; integrity - a cryptographic signature of your encrypted data, and a cryptographic hash of the block it is mined into ensure your data is indelible and immutable.</p>
 
             <h2>Download & Install</h2>
             <p>Space is available for the following platforms;</p>
             <ul>
                 <li>Android - $1 - <a href="https://play.google.com">Google Play Store</a></li>
-                <li>iOS - Coming soon - early 2020</li>
-                <li>Linux - Coming soon - late 2018</li>
-                <li>MacOS - Coming soon - late 2018</li>
-                <li>Windows - Coming soon - late 2018</li>
+                <li>iOS - Coming soon - 2020</li>
+                <li>Linux - Coming soon - 2019</li>
+                <li>MacOS - Coming soon - 2019</li>
+                <li>Windows - Coming soon - 2019</li>
             </ul>
 
             <h2>Register & Subscribe</h2>
             <p>When you create an Aletheia Ware account with a unique alias and a password of at least 12 characters, a 2048bit RSA public/private key pair is generated. Your alias and public key are registered with Aletheia Ware servers, and your private key is encrypted with your password and stored on your device - it does not leave your possession and therefore only you can decrypt your data.</p>
 
-            <p>To prevent loss of access to your data in case your device gets damaged, lost, or stolen, Aletheia Ware reccomends making a hard copy of your key pair and storing it in a secure location such as a fire-proof safe, or bank vault.</p>
+            <p>Aletheia Ware does not store your password or private key and therefore, unlike cloud storage providers, cannot read your data. Instead, Space encrypts your data on your device using your public key before mining it into a blockchain and uploading it to the network. Upon download, Space decrypts your data on your device using your private key.</p>
 
-            <p>Aletheia Ware offers 3 subscription tiers to choose from; Basic (default), Standard, and Premium</p>
-            <table class="tier-table">
-                <tr>
-                    <th>Basic</th>
-                    <th>Standard</th>
-                    <th>Premium</th>
-                </tr>
-                <tr>
-                    <td>Free</td>
-                    <td>$10/mo<br />or<br />$100/yr</td>
-                    <td>$100/mo<br />or<br />$1000/yr</td>
-                </tr>
-                <tr>
-                    <td>5 MiB/mo</td>
-                    <td>50 MiB/mo</td>
-                    <td>1 GiB/mo</td>
-                </tr>
-                <tr>
-                    <td>1 GiB max</td>
-                    <td>30 GiB max</td>
-                    <td>1 TiB max</td>
-                </tr>
-            </table>
-            <p>Standard and Premium subscriptions can be paid monthly or yearly, the later being the most cost effective - 12 months for the price of 10.</p>
-            <p>Each tier has a limit of how much data can be mined each month, and a maximum data storage quota. Data size is measured in <a href="https://en.wikipedia.org/wiki/Binary_prefix">binary prefix</a>.</p>
+            <p>To prevent loss of access to your data in case your device gets damaged, lost, or stolen, Aletheia Ware reccomends provisioning multiple devices (see Export & Import below) and making a hard copy of your key pair and storing it in a secure location such as a fire-proof safe, or bank vault.</p>
 
             <h2>Encrypt & Upload</h2>
-            <p>Once a file have been selected for upload a 128bit AES key will be generated and used to encrypt the file. The key itself is then encrypted with your public key, and uploaded, along with the encrypted file, to Aletheia Ware servers to be mined into a blockchain.</p>
+            <p>Once a file have been selected for upload a 128bit AES key will be generated and used to encrypt the file. The key itself is then encrypted with your public key, and, along with the encrypted file, either mined into the blockchain locally, or uploaded to Aletheia Ware's <a href="mining.html">Mining-as-a-Service</a> platform.</p>
 
             <h2>Download & Decrypt</h2>
             <p>After being mined, your encrypted data and associated key can be downloaded, decrypted using your private key.</p>
@@ -75,6 +61,7 @@
             <p>Your public/private key pair can be exported to other devices giving you easy access to your data from any supported device. Provisioning your key pair on multiple devices can also help prevent loss of access to your data in case one of your devices gets damaged, lost, or stolen.</p>
 
             <div class="footer">
+                <p>© 2019 Aletheia Ware LLC.  All rights reserved.</p>
             </div>
         </div>
     </body>
