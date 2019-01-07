@@ -100,6 +100,8 @@
                             </ol>
                         </p>
 
+                        <!-- TODO Alice sending a message to Bob, how does Bob know Alice actually sent the message? -->
+
                         <img src="20190104-signature.png" />
                     </li>
                 </ol>
@@ -109,6 +111,7 @@
 
             <h2>Step 2: Block</h2>
             <p>A block is a data structure which describes how the data is formatted. For example the structure could contain:
+            <!-- TODO now that we have a way to conceal the data being sent and verify the data is from the supposed sender, we now need to define a format which describes how to interpret the data - is it payload followed by signature, or visa versa? A block is a data structure which describes how the data is formatted. In this case the "block" of data is defined as having:-->
                 <ol>
                     <li>Timestamp - when the block was created.</li>
                     <li>Previous - the hash of the previous block (see Step 3: Chain).</li>
