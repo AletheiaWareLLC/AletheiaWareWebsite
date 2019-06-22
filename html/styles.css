@@ -103,17 +103,3 @@ p.subtitle {
 .nav a:hover {
     color: darkgrey;
 }
-.mining-price-table {
-    border-spacing: 20px 10px;
-    empty-cells: hide;
-    margin: auto;
-}
-.mining-price-table td {
-    padding: 0px 10px;
-}
-.mining-price-table th {
-    border-bottom: 1px solid black;
-}
-.mining-price-table tbody {
-    text-align: center;
-}
