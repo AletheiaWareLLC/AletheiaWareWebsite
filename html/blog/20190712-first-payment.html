@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <link rel="stylesheet" href="../styles.css">
+        <title>My First [Failed] Payment - Aletheia Ware</title>
+    </head>
+
+    <body>
+        <div class="content">
+            <div class="header">
+                <img src="../logo.svg" />
+            </div>
+            <h1>My First [Failed] Payment</h1>
+
+            <p class="subtitle">A picture worth $32831.24</p>
+
+            <p>One evening in March as I was cooking in the kitchen, I heard Sophie exclaim from the living room "What the fuck?! You just tried to charge me $32000!!" She'd just received an alert from her bank.</p>
+
+            <p>Whilst trying not to burn dinner I scrambled to make sense of what happened. I checked the server logs to find an error from Stripe saying the card had been declined.</p>
+
+            <pre><samp>
+2019/03/27 01:04:52 server.go:359: 96.68.178.74:37236 HTTP/1.1 POST space.aletheiaware.com /mining/file
+2019/03/27 01:04:54 server.go:370: Record 3283124
+2019/03/27 01:05:56 server.go:422: {"charge":"ch_1EIQDHA48VeysVMtAlm14hmE","code":"card_declined","status":402,
+"message":"Your card was declined.","request_id":"req_Uza21WY3W6CWon","type":"card_error"}
+            </samp></pre>
+
+            <p>I pulled up the Stripe dashboard to see the bank had declined the payment.</p>
+
+            <br/>
+
+            <img src="20190712-stripe-declined.png" />
+
+            <br/>
+
+            <p>Sophie was testing an early version of <a href="https://space.aletheiaware.com">S P A C E</a> and had added a picture of our puppy that was 3.2Mb (3283124bytes). The server had incorrectly calculated the price and instead of charging $0.01 per megabyte had charged $0.01 per byte! A few minutes later the app retried adding the picture so the server had retried the transaction!</p>
+
+            <br/>
+
+            <img src="20190712-stripe-duplicate.png" />
+
+            <br/>
+
+            <p>I created and merged the <a href="https://github.com/AletheiaWareLLC/spaceservergo/commit/516c2162dede98f81283d7d395e9e389e5f8a45b">fix</a>, redeployed the server, and finished cooking - what a night!</p>
+
+            <br/>
+
+            <img src="20190712-github-commit.png" />
+
+            <br/>
+
+            <p>This article was posted as part of Aletheia Ware's commitment to being an open and honest company, which includes failing publicly. If you have any questions, comments, concerns, or feedback please email <a href="mailto:support@aletheiaware.com">support@aletheiaware.com</a>.</p>
+
+            <div class="footer">
+                <p>© 2019 Aletheia Ware LLC.  All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+</html>
