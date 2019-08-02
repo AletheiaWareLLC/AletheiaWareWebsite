@@ -1,0 +1,16 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="48" height="60">
+    <g fill="none" stroke="black" stroke-linecap="butt" stroke-linejoin="bevel" stroke-width="1">
+        <circle cx="24" cy="38" r="20" />
+        <polyline points="4,38 12,30 20,38 28,46 32,42 36,46 44,38" />
+        <polyline points="24,9 24,8" />
+    </g>
+    <!-- Candle Stick -->
+    <g fill="lightblue" stroke="blue" stroke-linecap="butt" stroke-linejoin="bevel" stroke-width="1">
+        <polyline points="24,9 23,10 23,18 25,18 25,10 24,9" />
+    </g>
+    <!-- Candle Flame -->
+    <g fill="yellow" stroke="orange" stroke-linecap="butt" stroke-linejoin="bevel" stroke-width="1">
+        <path d="M 24,8 Q 28,8 24,1 Q 25,3 23,5 T 24,8 Z" />
+    </g>
+</svg>
