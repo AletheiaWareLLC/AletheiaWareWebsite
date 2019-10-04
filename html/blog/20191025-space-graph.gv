@@ -1,0 +1,75 @@
+digraph RepoGraph {
+    overlap=false;
+    splines=ortho;
+    clusterrank=local;
+    edge [color=white];
+
+    subgraph cluster_1 {
+        style=filled;
+        color=white;
+        fontcolor=white;
+        fontname="Helvetica";
+        node [shape=box,color=white,fontcolor=white,fontname="Helvetica"];
+
+        subgraph cluster_common {
+            color="#26A753";
+            JavaCommon;
+            AletheiaWareCommonJava -> AletheiaWareCommonAndroid;
+            label="Common Libraries\n ";
+        }
+
+        subgraph cluster_bc {
+            color="#E83233";
+            BC -> BCJava -> BCAndroid;
+            label="BC\nUniversal Blockchain Library";
+        }
+
+        subgraph cluster_alias {
+            color="#FE7404";
+            Alias -> AliasJava;
+            label="Alias\nIdentity Library";
+        }
+
+        subgraph cluster_finance {
+            color="#FDD011";
+            Finance -> FinanceJava;
+            label="Finance\nFinancial Library";
+        }
+
+        subgraph cluster_space {
+            color=black;
+            Space -> SpaceJava -> SpaceAndroid;
+            label="S P A C E\nSecure, Private, Storage";
+        }
+    }
+
+    # Protocol Buffers
+    BC -> Alias[constraint=false];
+    BC -> Finance[constraint=false];
+    BC -> Space[constraint=false];
+    Alias -> Space[constraint=false];
+    Finance -> Space[constraint=false];
+
+    # Java
+    JavaCommon -> AletheiaWareCommonJava[constraint=false];
+    JavaCommon -> BCJava[constraint=false];
+    JavaCommon -> AliasJava[constraint=false];
+    JavaCommon -> FinanceJava[constraint=false];
+    JavaCommon -> SpaceJava[constraint=false];
+    AletheiaWareCommonJava -> BCJava[constraint=false];
+    AletheiaWareCommonJava -> AliasJava[constraint=false];
+    AletheiaWareCommonJava -> SpaceJava[constraint=false];
+    BCJava -> AliasJava[constraint=false];
+    BCJava -> FinanceJava[constraint=false];
+    BCJava -> SpaceJava[constraint=false];
+    AliasJava -> BCAndroid[constraint=false];
+    AliasJava -> FinanceJava[constraint=false];
+    AliasJava -> SpaceJava[constraint=false];
+    FinanceJava -> BCAndroid[constraint=false];
+    FinanceJava -> SpaceJava[constraint=false];
+
+    # Android
+    AletheiaWareCommonAndroid -> BCAndroid[constraint=false];
+    AletheiaWareCommonAndroid -> SpaceAndroid[constraint=false];
+    BCAndroid -> SpaceAndroid[constraint=false];
+}

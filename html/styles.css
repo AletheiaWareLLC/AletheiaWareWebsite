@@ -8,6 +8,9 @@ body {
     background-color: white;
     font-family: Helvetica, sans-serif;
 }
+figure figcaption {
+    text-align: center;
+}
 h1 {
     color: black;
     font-size: 1.5em;
