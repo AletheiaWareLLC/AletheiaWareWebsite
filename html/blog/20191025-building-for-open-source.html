@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <link rel="stylesheet" href="../styles.css">
+        <title>Building for Open Source - Aletheia Ware</title>
+    </head>
+
+    <body>
+        <div class="content">
+            <div class="header">
+                <img src="../logo.svg" />
+            </div>
+            <h1>Building for Open Source</h1>
+
+            <p class="subtitle">A Multiple Repository Architecture</p>
+
+            <p>It started with an email from Wink entitled "Help :)" - after joining Aletheia Ware's Open Source Community he had run into some confusion about all the repositories and dependencies.</p>
+
+            <p>Aletheia Ware uses multiple repositories to split code into many pieces each with a specific purpose. The alternative approach is a monolithic repository where all code related to a project is stored in a single place. Choosing between these two architectures has been a topic of hot debate among the software community.</p>
+
+            <p>The Perspective Android app is made up of 12 repositories:</p>
+
+            <a href="20191025-perspective-graph.gv.svg" >
+                <figure>
+                    <img src="20191025-perspective-graph.gv.svg" width="100%" />
+                    <figcaption>12 Repositories of Perspective</figcaption>
+                </figure>
+            </a>
+
+            <p>Similarly, the S P A C E Android app is composed of 13 repositories:</p>
+
+            <a href="20191025-space-graph.gv.svg" >
+                <figure>
+                    <img src="20191025-space-graph.gv.svg" width="100%" />
+                    <figcaption>13 Repositories of S P A C E</figcaption>
+                </figure>
+            </a>
+
+            <p>Compartmentalizing and isolating code allows for better testing and code reuse; <span style="color: #26A753;">Common Libraries</span> are shared between Perspective and S P A C E. Future games can share <span style="color: #A560FF;">Joy</span> while future blockchain apps can share <span style="color: #E83233;">BC</span>, <span style="color: #FE7404;">Alias</span>, and <span style="color: #FDD011;">Finance</span>.</p>
+
+            <p>This architecture unfortunately creates a challenge for developers joining the open source project. Whereas my development machine already has all the repositories synced, scripts to perform the build steps, and symbolic links to chain the build artifacts; other developers would need to sync each of the 12 repositories separately, build each in turn, and make the output of each step available to the next.</p>
+
+            <p>Wink addressed these issues by;
+                <ul>
+                    <li>introducing a new repository, <a href="https://github.com/AletheiaWareLLC/PerspectiveSuite">PerspectiveSuite</a>, which uses Git Submodules [<a href="https://git-scm.com/docs/git-submodule">1</a>][<a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">2</a>] to pull all the relevant repositories together into a single monolithic repository. A submodule points to a specific commit in another repository and needs to be explicitly updated, which offers two advantages;
+                        <ul>
+                            <li>submodules can be 'locked' to a specific version.</li>
+                            <li>changes across submodules can be committed to the suite atomically.</li>
+                        </ul>
+                    </li>
+                    <li>creating a directory within PerspectiveSuite to house the build scripts which could then be executed by Gradle.</li>
+                    <li>removing the symbolic links in favour of relative links which worked both with and without the suite.</li>
+                </ul>
+            </p>
+
+            <p>The <a href="https://github.com/AletheiaWareLLC/PerspectiveSuite/wiki/workflow">developer workflow</a> is now much simplier:</p>
+
+            <pre><samp>
+            # Clone
+            git clone git@github.com:AletheiaWareLLC/PerspectiveSuite.git
+            # Clean
+            ./gradlew clean
+            # Sync
+            ./gradlew sync
+            # Build
+            ./gradlew build
+            </samp></pre>
+
+            <p>To create such a suite for your project 'FooBar' first initialize a new repository, add the submodules, and push to a remote:</p>
+
+            <pre><samp>
+            # Initialize repository
+            git init FooBarSuite
+            # Add submodules
+            git submodule add git@github.com:Username/Foo.git
+            git submodule add git@github.com:Username/Bar.git
+            # Add remote
+            git remote add origin git@github.com:Username/FooBarSuite.git
+            # Push
+            git push -u origin master
+            </samp></pre>
+
+            <p>Submodules give the best of both worlds - each repository is highly specific with a single purpose but multiple repositories are linked together into a single suite.</p>
+
+            <div class="footer">
+                <p>© 2019 Aletheia Ware LLC.  All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+</html>

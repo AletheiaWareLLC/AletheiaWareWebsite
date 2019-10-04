@@ -1,0 +1,50 @@
+digraph RepoGraph {
+    overlap=false;
+    splines=ortho;
+    clusterrank=local;
+    edge [color=white];
+
+    subgraph cluster_1 {
+        style=filled;
+        color=white;
+        fontcolor=white;
+        fontname="Helvetica";
+        node [shape=box,color=white,fontcolor=white,fontname="Helvetica"];
+
+        subgraph cluster_common {
+            color="#26A753";
+            JavaCommon;
+            AletheiaWareCommonJava -> AletheiaWareCommonAndroid;
+            label="Common Libraries\n ";
+        }
+
+        subgraph cluster_joy {
+            color="#A560FF";
+            Joy -> JoyJava -> JoyAndroid;
+            label="Joy\nScene Graph Library";
+        }
+
+        subgraph cluster_perspective {
+            color="#3A8EE5";
+            Perspective -> PerspectiveJava -> PerspectiveAndroid;
+            PerspectiveMesh -> PerspectiveAndroid;
+            PerspectivePuzzle -> PerspectiveAndroid;
+            PerspectiveShader -> PerspectiveAndroid;
+            label="Perspective\n3D Puzzle Game";
+        }
+    }
+
+    # Protocol Buffers
+    Joy -> Perspective[constraint=false];
+
+    # Java
+    JavaCommon -> AletheiaWareCommonJava[constraint=false];
+    JavaCommon -> JoyJava[constraint=false];
+    JavaCommon -> PerspectiveJava[constraint=false];
+    AletheiaWareCommonJava -> PerspectiveJava[constraint=false];
+    JoyJava -> PerspectiveJava[constraint=false];
+
+    # Android
+    AletheiaWareCommonAndroid -> PerspectiveAndroid[constraint=false];
+    JoyAndroid -> PerspectiveAndroid[constraint=false];
+}
