@@ -1,0 +1,12 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0,0,4096,2304" width="4096" height="2304">
+    <defs>
+        <pattern id="logo" viewBox="0,0,48,48" width="1.171875%" height="2.083333%">
+            <g fill="none" stroke="grey" stroke-linecap="butt" stroke-linejoin="bevel" stroke-width="1">
+                <circle cx="24" cy="24" r="20" />
+                <polyline points="4,24 12,16 20,24 28,32 32,28 36,32 44,24" />
+            </g>
+        </pattern>
+    </defs>
+    <rect x="0" y="0" width="4096" height="2304" fill="url(#logo)" stroke="url(#logo)" />
+</svg>
