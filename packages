@@ -1,11 +1,17 @@
 aliasfynego
 aliasfynego/cmd/aliasfyne
+aliasfynego/ui
+aliasfynego/ui/data
 aliasgo
 aliasservergo
 bcclientgo
 bcclientgo/cmd/bc
 bcfynego
 bcfynego/cmd/bcfyne
+bcfynego/storage
+bcfynego/ui
+bcfynego/ui/account
+bcfynego/ui/data
 bcgo
 bcnetgo
 bcservergo
@@ -17,6 +23,9 @@ spaceclientgo
 spaceclientgo/cmd/space
 spacefynego
 spacefynego/cmd/spacefyne
+spacefynego/ui
+spacefynego/ui/data
+spacefynego/ui/viewer
 spacego
 spaceservergo
 testinggo
