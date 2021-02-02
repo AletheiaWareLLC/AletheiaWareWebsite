@@ -4,18 +4,18 @@
         <meta charset="UTF-8" />
         <meta http-equiv="Content-Language" content="en" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="go-import" content="aletheiaware.com/${project} git https://github.com/AletheiaWareLLC/${project}" />
-        <meta name="go-source" content="aletheiaware.com/${project} https://github.com/AletheiaWareLLC/${project} https://github.com/AletheiaWareLLC/${project}/tree/master{/dir} https://github.com/AletheiaWareLLC/${project}/blob/master{/dir}/{file}#L{line}" />
+        <meta name="go-import" content="aletheiaware.com/${base} git https://github.com/AletheiaWareLLC/${base}" />
+        <meta name="go-source" content="aletheiaware.com/${base} https://github.com/AletheiaWareLLC/${base} https://github.com/AletheiaWareLLC/${base}/tree/master{/dir} https://github.com/AletheiaWareLLC/${base}/blob/master{/dir}/{file}#L{line}" />
     </head>
     <body>
-        <h1>aletheiaware.com/${project}</h1>
-        <code>go get aletheiaware.com/${project}</code>
+        <h1>aletheiaware.com/${full}</h1>
+        <code>go get aletheiaware.com/${full}</code>
         <br />
-        <code>import "aletheiaware.com/${project}"</code>
+        <code>import "aletheiaware.com/${full}"</code>
         <br />
-        Documentation: <a href="https://pkg.go.dev/aletheiaware.com/${project}">https://pkg.go.dev/aletheiaware.com/${project}</a>
+        Documentation: <a href="https://pkg.go.dev/aletheiaware.com/${full}">https://pkg.go.dev/aletheiaware.com/${full}</a>
         <br />
-        Source: <a href="https://github.com/AletheiaWareLLC/${project}">https://github.com/AletheiaWareLLC/${project}</a>
+        Source: <a href="https://github.com/AletheiaWareLLC/${full}">https://github.com/AletheiaWareLLC/${full}</a>
         <br />
     </body>
 </html>
