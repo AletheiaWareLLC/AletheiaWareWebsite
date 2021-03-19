@@ -1,0 +1,73 @@
+a, h1, h2, h3, h4, h5, h6 {
+    color: deepskyblue;
+}
+a:hover {
+    color: lightskyblue;
+}
+a.call-to-action {
+    background-color: white;
+    border: deepskyblue;
+    border-width: 2px;
+    border-radius: 8px;
+    border-style: solid;
+    color: deepskyblue;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 16px auto 16px auto;
+    min-width: 96px;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 10%;
+}
+a.call-to-action:hover {
+    background-color: deepskyblue;
+    color: white;
+}
+embed.banner {
+    display: block;
+    margin: 10px auto 0px auto;
+    width: 50%;
+    height: auto;
+}
+img.feature {
+    width: 100%;
+    height: auto;
+}
+p.center {
+    text-align: center;
+    padding: 32px;
+}
+p.meta {
+    color: lightskyblue;
+    font-size: x-small;
+    margin: 3px 0px 3px 0px;
+}
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+table.features {
+    table-layout: fixed;
+    text-align: center;
+    width: 100%;
+}
+td.features {
+    width: 50%;
+}
+ul {
+    padding-left: 20px;
+}
+.header {
+    border-bottom: 1px solid deepskyblue;
+}
+.footer {
+    border-top: 1px solid deepskyblue;
+}
+.nav a {
+    color: deepskyblue;
+}
+.nav a:hover {
+    color: lightskyblue;
+}
