@@ -1,5 +1,5 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="380" height="290">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="432" height="290">
     <!-- Guide
     <g fill="none" stroke="grey" stroke-width=".1">
         <polyline points="228,50 0,145 228,240" />
@@ -36,6 +36,10 @@
         <polyline points="348,0 348,290" />
         <polyline points="360,0 360,290" />
         <polyline points="372,0 372,290" />
+        <polyline points="384,0 384,290" />
+        <polyline points="396,0 396,290" />
+        <polyline points="408,0 408,290" />
+        <polyline points="420,0 420,290" />
     </g> -->
     <!-- Convey -->
     <g fill="none" stroke="deepskyblue" stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
@@ -48,7 +52,8 @@
     </g>
     <!-- Sound Waves -->
     <g fill="none" stroke="deepskyblue" stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
-        <path d="M 240,110 Q 252,145 240,180" stroke-width="2" />
-        <path d="M 312,60 Q 336,145 312,230" stroke-width="8" />
+        <path d="M 232.80,87.40 Q 240,145 232.80,202.60" stroke-width="2" />
+        <path d="M 302.64,70.12 Q 312,145 302.64,219.88" stroke-width="6" />
+        <path d="M 372.48,52.84 Q 384,145 372.48,237.16" stroke-width="10" />
     </g>
 </svg>
