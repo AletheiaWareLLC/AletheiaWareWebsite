@@ -30,6 +30,7 @@ netgo
 netgo/cmd/netserver
 spaceclientgo
 spaceclientgo/cmd/space
+spaceclientgo/test
 spacefynego
 spacefynego/cmd/spacefyne
 spacefynego/storage
