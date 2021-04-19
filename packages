@@ -6,6 +6,7 @@ aliasgo
 aliasservergo
 bcclientgo
 bcclientgo/cmd/bc
+bcclientgo/test
 bcfynego
 bcfynego/cmd/bcfyne
 bcfynego/storage
@@ -13,6 +14,14 @@ bcfynego/ui
 bcfynego/ui/account
 bcfynego/ui/data
 bcgo
+bcgo/account
+bcgo/cache
+bcgo/channel
+bcgo/identity
+bcgo/network
+bcgo/node
+bcgo/test
+bcgo/validation
 bcnetgo
 bcservergo
 cryptogo
@@ -23,6 +32,7 @@ spaceclientgo
 spaceclientgo/cmd/space
 spacefynego
 spacefynego/cmd/spacefyne
+spacefynego/storage
 spacefynego/ui
 spacefynego/ui/data
 spacefynego/ui/viewer
