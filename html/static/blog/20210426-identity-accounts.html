@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <link rel="stylesheet" href="../styles.css">
+        <title>Identity & Accounts - Aletheia Ware</title>
+    </head>
+
+    <body>
+        <div class="content">
+            <div class="header">
+                <a href="/">
+                    <img src="../logo.svg" />
+                </a>
+            </div>
+            <h1>Identity & Accounts</h1>
+
+            <p class="subtitle">Whoooooo are you? Who, who, who, who?</p>
+
+            <p>Identities and Accounts enable your app to recognize the person using it and taylor the interface and experience to that individual. However this can be difficult to implement securely. This post will show you how to use BC to handle Indentity and Accounts so you don't need to invest the time and energy yourself and can instead focus on the core value of your app.</p>
+
+            <a href="20210426-bc-account.png" >
+                <figure>
+                    <img src="20210426-bc-account.png" width="75%" />
+                    <figcaption>BC Account Dialog</figcaption>
+                </figure>
+            </a>
+
+            <h2>BC</h2>
+
+            <p>BC is a Universal Blockchain Library which this post will use to provide Identity and Accounts inside a Fyne app.</p>
+
+            <figure>
+                <script src="https://gist.github.com/stuartmscott/ae654efc90d8d3425d4b523db6cf7050.js"></script>
+                <figcaption>Integrating BC Accounts into a Fyne App</figcaption>
+            </figure>
+
+            <h3>Sign Up</h3>
+
+            <p>When your users sign up they choose their own <strong>Alias</strong> and <strong>Password</strong>, then BC generates an <strong>RSA 4096bit Asymetric Keypair</strong>. The <strong>Alias</strong> and <strong>Public Key</strong> are registered when they are mined into the <strong>Alias</strong> blockchain. While the <strong>Private Key</strong> is encrypted with the <strong>Password</strong> and stored exclusively on their device.</p>
+
+            <a href="20210426-bc-sign-up.png" >
+                <figure>
+                    <img src="20210426-bc-sign-up.png" width="50%" />
+                    <figcaption>BC Access Dialog - Sign Up</figcaption>
+                </figure>
+            </a>
+
+            <h3>Sign In</h3>
+
+            <p>A user can sign in by entering their <strong>Alias</strong> and <strong>Password</strong> at which point their <strong>Private Key</strong> is loaded from their device, decrypted, and made available for <strong>Cryptographic Operations</strong> (see below).</p>
+
+            <a href="20210426-bc-sign-in.png" >
+                <figure>
+                    <img src="20210426-bc-sign-in.png" width="50%" />
+                    <figcaption>BC Access Dialog - Sign In</figcaption>
+                </figure>
+            </a>
+
+            <h3>Import/Export</h3>
+
+            <p>BC provides a mechanism for account holders to <strong>Export</strong> their <strong>Private Key</strong> from one device and <strong>Import</strong> it into another device. Enabling their account to follow them from device to device</p>
+
+            <a href="20210426-bc-import-keys.png" >
+                <figure>
+                    <img src="20210426-bc-import-keys.png" width="50%" />
+                    <figcaption>BC Access Dialog - Import Keys</figcaption>
+                </figure>
+            </a>
+
+            <h3>Cryptographic Operations</h3>
+
+            <p>Once an account is signed in, it can be used to perform common cryptographic operations such as <strong>Encrypting</strong>, <strong>Decrypting</strong>, <strong>Signing</strong>, and <strong>Verifying</strong>.</p>
+
+            <h4>Encrypting & Decrypting</h4>
+
+            <p>If your app transmits or persists sensitive information then you should protect it with encryption. <strong>Asymetric Encryption</strong> (like RSA 4096bit) offers high security for small pieces of data, but when working with large datasets it is best to use <strong>Symmetric Encryption</strong> (like AES 256bit) for the dataset itself, and then encrypt the <strong>Symmetric Key</strong> with the <strong>Asymetric Key</strong>.</p>
+
+            <figure>
+                <script src="https://gist.github.com/stuartmscott/35650e520c3b3404f14cdc52562a223f.js"></script>
+                <figcaption>Encrypting & Decrypting Sensitive Information</figcaption>
+            </figure>
+
+            <h4>Signing & Verifying</h4>
+
+            <p>Cryptographic Signatures can ensure that data has not been corrupted, or tampered with.</p>
+
+            <figure>
+                <script src="https://gist.github.com/stuartmscott/24b1f2c2fea0d8fa20665e77e751b5d4.js"></script>
+                <figcaption>Signing & Verifying Sensitive Information</figcaption>
+            </figure>
+
+            <h3>Test vs Live Mode</h3>
+
+            <p>By default apps will be in <strong>TEST MODE</strong> which runs on a network intended for testing purposes. Once you're ready to distribute your app to real-world customers, use the <kbd>fyne release</kbd>, or <kbd>go build -tags release</kbd> commands to configure your app to be in <strong>LIVE MODE</strong>.</p>
+
+            <p>If you have any questions, or encounter any issues get in <a href="../contact.html">contact</a>.</p>
+
+            <div class="footer">
+                <p>© 2021 Aletheia Ware LLC.  All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+</html>
