@@ -25,6 +25,9 @@ bcgo/validation
 bcnetgo
 bcservergo
 cryptogo
+diarygo
+diarygo/cmd/diary
+diarygo/cmd/diaryfyne
 financego
 netgo
 netgo/cmd/netserver
