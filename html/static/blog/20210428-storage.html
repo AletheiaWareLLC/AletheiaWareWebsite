@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <link rel="stylesheet" href="../styles.css">
+        <title>Storage - Aletheia Ware</title>
+    </head>
+
+    <body>
+        <div class="content">
+            <div class="header">
+                <a href="/">
+                    <img src="../logo.svg" />
+                </a>
+            </div>
+            <h1>Storage</h1>
+
+            <p class="subtitle">S&nbsp;P&nbsp;A&nbsp;C&nbsp;E for Data</p>
+
+            <p>Encrypting customer data from end-to-end protects their digital assets and privacy. Storing customer data on the network enables your customers to access it no matter where they are, or what device they are using, as long as they have a connection. Storing redundant copies of customer data in multiple geographic regions, with multiple registrars ensures it is resilient to the unexpected.</p>
+
+            <p>But what if you don't want to think about all these things, and would prefer to focus on the core features unique to your app? Well then, let S&nbsp;P&nbsp;A&nbsp;C&nbsp;E handle storage for you.</p>
+
+            <h2>S&nbsp;P&nbsp;A&nbsp;C&nbsp;E</h2>
+
+            <p>S&nbsp;P&nbsp;A&nbsp;C&nbsp;E is a Digital Storage Marketplace which enables your app to offer secure and private storage of your customer's data without requiring you to setup, maintain, and operate your own storage infrastructure.</p>
+
+            <p>S&nbsp;P&nbsp;A&nbsp;C&nbsp;E is built on top of <a href="20210426-identity-accounts.html">BC</a> and stores documents as metadata and a sequence of deltas all of which are stored by the customer's choice of registrars.</p>
+
+            <p>This post will use S&nbsp;P&nbsp;A&nbsp;C&nbsp;E to provide storage inside a Fyne app called <strong>S&nbsp;P&nbsp;A&nbsp;C&nbsp;E&nbsp;O&nbsp;U&nbsp;T</strong>. This simple app consists of a list populated with the customer's documents, an action so that when one document is selected it gets displayed in a new window, and a toolbar containing options to add a new document, refresh the list, configure their registrars, and manage their account.</p>
+
+            <figure>
+                <script src="https://gist.github.com/stuartmscott/dbe83e0d54a939c10473742944e19357.js"></script>
+                <figcaption>A Fyne S&nbsp;P&nbsp;A&nbsp;C&nbsp;E App</figcaption>
+            </figure>
+
+            <h3>List & Search</h3>
+
+            <p>The documents stored in S&nbsp;P&nbsp;A&nbsp;C&nbsp;E can be listed or searched with a given filter.</p>
+
+            <figure>
+                <script src="https://gist.github.com/stuartmscott/33c52b6641f1637601375652502cd4c3.js"></script>
+                <figcaption>Listing & Searching Documents in S&nbsp;P&nbsp;A&nbsp;C&nbsp;E</figcaption>
+            </figure>
+
+            <h3>Add & Amend</h3>
+
+            <p>Any document can be added to S&nbsp;P&nbsp;A&nbsp;C&nbsp;E for future retrieval, the toolkit also includes viewers for some common document types such as images and plain text.</p>
+
+            <p>Blockchains are immutable, however documents are frequently updated. To support this S&nbsp;P&nbsp;A&nbsp;C&nbsp;E provides a mutable system on top of an immutable system by storing each document as a sequence of deltas. Each delta once added to the blockchain is immutable, however the contents of the document can be changed by appending more deltas.</p>
+
+            <figure>
+                <script src="https://gist.github.com/stuartmscott/be62f5553998d594d20f12f8ae06bca6.js"></script>
+                <figcaption>Adding & Amending Documents in S&nbsp;P&nbsp;A&nbsp;C&nbsp;E</figcaption>
+            </figure>
+
+            <h3>Read & Write</h3>
+
+            <p>When a document is read, all of its deltas are loaded and applied sequentially, resulting in the latest version of the document.</p>
+
+            <p>When a document is written, the new data is compared with the old data and a sequence of deltas is calculated (similar to git) and stored in S&nbsp;P&nbsp;A&nbsp;C&nbsp;E.</p>
+
+            <figure>
+                <script src="https://gist.github.com/stuartmscott/3f25cfe349e6b87c60bf153bf34d4e0f.js"></script>
+                <figcaption>Reading & Writing Documents in S&nbsp;P&nbsp;A&nbsp;C&nbsp;E</figcaption>
+            </figure>
+
+            <h3>Watch</h3>
+
+            <p>A document can be watched so that an action, such as reloading a UI, is triggered when it updates.</p>
+
+            <figure>
+                <script src="https://gist.github.com/stuartmscott/01dc51a711d60615c007d099eb1a86f9.js"></script>
+                <figcaption>Watching Documents in S&nbsp;P&nbsp;A&nbsp;C&nbsp;E</figcaption>
+            </figure>
+
+            <p>If you have any questions, or encounter any issues get in <a href="../contact.html">contact</a>.</p>
+
+            <div class="footer">
+                <p>© 2021 Aletheia Ware LLC.  All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+</html>
