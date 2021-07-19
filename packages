@@ -4,6 +4,8 @@ aliasfynego/ui
 aliasfynego/ui/data
 aliasgo
 aliasservergo
+authgo
+authgo/cmd/example
 bcclientgo
 bcclientgo/cmd/bc
 bcclientgo/test
