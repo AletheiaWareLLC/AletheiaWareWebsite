@@ -33,6 +33,12 @@ diarygo/cmd/diaryfyne
 financego
 netgo
 netgo/cmd/netserver
+perspectivefungo
+perspectivefungo/cmd/generator
+perspectivefungo/cmd/glfwplayer
+perspectivefungo/cmd/scorer
+perspectivefungo/cmd/server
+perspectivefungo/cmd/wasmplayer
 spaceclientgo
 spaceclientgo/cmd/space
 spaceclientgo/test
