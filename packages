@@ -32,6 +32,8 @@ diarygo/cmd/diary
 diarygo/cmd/diaryfyne
 financego
 netgo
+netgo/cmd/logparser
+netgo/cmd/logserver
 netgo/cmd/netserver
 perspectivefungo
 perspectivefungo/cmd/generator
