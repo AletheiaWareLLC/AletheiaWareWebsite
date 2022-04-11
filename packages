@@ -31,6 +31,13 @@ diarygo
 diarygo/cmd/diary
 diarygo/cmd/diaryfyne
 financego
+flamego
+flamego/assembler
+flamego/assembler/intermediate
+flamego/cmd/fasm
+flamego/cmd/fvm
+flamego/isa
+flamego/vm
 netgo
 netgo/cmd/logparser
 netgo/cmd/logserver
@@ -41,6 +48,8 @@ perspectivefungo/cmd/glfwplayer
 perspectivefungo/cmd/scorer
 perspectivefungo/cmd/server
 perspectivefungo/cmd/wasmplayer
+pyromancergo
+pyromancergo/cmd/pyromancer
 spaceclientgo
 spaceclientgo/cmd/space
 spaceclientgo/test
